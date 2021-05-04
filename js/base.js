@@ -53,8 +53,8 @@ function ejercicio2 (a) {
 let result2 = ejercicio2(numC);
 
 if (result2 == 0) {
-    console.log('El numero ${numC} es par');
+    console.log(`El numero ${numC} es par`);
 }
 else {
-    console.log('El numero ${numC} no es par');
+    console.log(`El numero ${numC} no es par`);
 }
