@@ -1,150 +1,149 @@
-/**
- * 1:
- * Pedir al usuario estos 3 datos
- * - Nombre
- * - Peso actual
- * Calcular el peso que tendria esa persona en la luna
- * Imprimirlo en consola
- * ** Opcional -> Crear una función **
- */
+// 1:
+// Pedir al usuario un numero entre 1 y 12
+// Imprimir en consola el numero de días que corresponden a ese mes y su nombre
+// p.ej.
+// --> El mes 5 (Mayo) tiene 31 días
 
-const weightEarth = parseFloat(window.prompt('Ingresa tu peso en la tierra en kilogramos: '))
-let weightMoon = (weightEarth * 1.622 / 9.81).toFixed(2)
-console.log(`Tu peso en la luna seria de ${weightMoon} Kg`)
+const monthNum = window.prompt('Ingresa un numero de mes: ')
 
-//////////////////////////////////////////////////////
+switch (monthNum)   {
+    case '1':
+        console.log(`El mes ${monthNum} (Enero) tiene 31 dias`)
+        break;
+
+    case '2':
+        console.log(`El mes ${monthNum} (Febrero) tiene 28 dias`)
+        break;
+
+    case '3':
+        console.log(`El mes ${monthNum} (Marzo) tiene 31 dias`)
+        break;
+
+    case '4':
+        console.log(`El mes ${monthNum} (Abril) tiene 30 dias`)
+        break;
+
+    case '5':
+        console.log(`El mes ${monthNum} (Abril) tiene 30 dias`)
+        break;
+
+    case '6':
+        console.log(`El mes ${monthNum} (Junio) tiene 30 dias`)
+        break;
+
+    case '7':
+        console.log(`El mes ${monthNum} (Julio) tiene 31 dias`)
+        break;
+
+    case '8':
+        console.log(`El mes ${monthNum} (Agosto) tiene 30 dias`)
+        break;
+
+    case '8':
+        console.log(`El mes ${monthNum} (Septiembre) tiene 31 dias`)
+        break;
+
+    case '10':
+        console.log(`El mes ${monthNum} (Octubre) tiene 31 dias`)
+        break;
+
+    case '11':
+        console.log(`El mes ${monthNum} (Noviembre) tiene 30 dias`)
+
+    case '12':
+        console.log(`El mes ${monthNum} (Diciembre) tiene 31 dias`)
+        break; 
+
+    default:
+        console.log('Ingresa un numero de mes valido...')
+}
+    
+        
+
+//////////////////////////////////////////////////////////////////////
 /**
  * 2:
- * Pedir al usuario la calificación de un examen ( 0 a 100)  por el prompt
- * Imprimir en consola las equivalencias en letra su calificación, es decir
- * -> si es mayor o igual a 90, imprimir "A"
- * -> si es mayor o igual a 80 y menor que 90 , imprimir "B"
- * -> si es mayor o igual a 70 y menor que 80 , imprimir "C"
- * -> si es mayor o igual a 60 y menor que 70 , imprimir "D"
- * -> si es mayor o igual a 50 y menor que 60 , imprimir "E"
- * -> si es menor 50 , imprimir "F"
+ * Pedir al usuario que indique como esta su día
+ * Opciones: Nublado, Soleado, Lluvioso, Nevado
+ * Si escribe alguna de ellas, colocar un mensaje 
+ * P.ej: soleado -> oh!, que buen clima para estar en la playa
+ * P.ej: nevado -> oh!, que buen clima para estar en casa
+ *  etc...
+ * Sino
+ * Pedir por prompt, Que describa que le gustaria hacer en su día
  */
 
-const grade = parseInt(window.prompt('Ingresa la calificacion obetneida en el examen: '))
-if (grade >= 90) {
-    console.log('Tu equivalencia es: A')
-}
-else if (grade >= 80 && grade < 90)  {
-    console.log('Tu equivalencia es: B')
-}
-else if (grade >= 70 && grade < 80)  {
-    console.log('Tu equivalencia es: C')
-}
-else if (grade >= 60 && grade < 70)  {
-    console.log('Tu equivalencia es: D')
-}
-else if (grade >= 50 && grade < 60)  {
-    console.log('Tu equivalencia es: E')
-}
-else {
-    console.log('Tu equivalencia es: F')
+const userWeather =window.prompt('Como esta el clima en tu localidad hoy? \n ...').toLowerCase()
+
+switch (userWeather)    {
+    case 'nublado':
+        console.log('Nada mejor que un dia nublado para unas pelis en nitflix...')
+        break;
+    case 'soleado':
+        console.log('Perfecto para un bronceado')
+        break;
+    case 'lluvioso':
+        console.log('Ponte botas!!!')
+        break;
+    case 'nevado':
+        console.log('Abrigate bien, nadie quiere un resfriado!')
+        break;
+    default:
+        window.prompt('Cuentanos que quisieras hacer hoy en tu dia?')
 }
 
-/////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
 /**
  * 3:
- * Pedir al usuario por prompt un numero entre 1 y 100
- * Comparar si ese numero es divisible entre 2, 3 u 11
- * Imprimir en consola un mensaje que indique de que numero(s) es múltiplo
- * p.ej. 6 es multiplo de 2 y de 3
- * p.ej. 22 es multiplo de 2 y de 11
- * p.ej. 21 es multiplo de 3
- * Sino, enviar un mensaje en consola que lo indique
+ * Pedir el nombre de una persona
+ * Verificar si el nombre termina con una vocal
+ * imprimir que `Tu nombre termina con ${vocal}`
+ * Sino
+ * imprimir que `Tu nombre termina con ${consonante}`
+ * -> Pedro
+ * -> `Tu nombre termina con o`
  */
 
-const numToCheck = parseInt(window.prompt('Ingresa un numero para checar su divisibilidad: '))
-if (Number.isInteger(numToCheck / 2))  {
-    console.log(`El numero ${numToCheck} es divisible entre 2`)
-}
-else  {
-    console.error(`El numero ${numToCheck} NO es divisible entre 2`)
-}
+const nameToCheck = window.prompt('Ingresa el nombre de una persona: ')
+const charToCheck = nameToCheck.slice(-1).toLowerCase()
 
-if (Number.isInteger(numToCheck / 3))  {
-    console.log(`El numero ${numToCheck} es divisible entre 3`)
+if (charToCheck == 'a' || charToCheck == 'e' || charToCheck == 'i' || charToCheck == 'o' || charToCheck == 'u') {
+    console.log(`Tu nombre termina con la vocal ${charToCheck}`)
 }
-else  {
-    console.error(`El numero ${numToCheck} NO es divisible entre 3`)
-}
-
-if (Number.isInteger(numToCheck / 11))  {
-    console.log(`El numero ${numToCheck} es divisible entre 11`)
-}
-else  {
-    console.error(`El numero ${numToCheck} NO es divisible entre 11`)
+else    {
+    console.log(`Tu nombre termina con la consonante ${charToCheck}`)
 }
 
 
-////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
 /**
  * 4:
- * Pedir al usuario por prompt un numero entre 1 y 100
- * verificar si es un par o impar
- * imprimir en resultado en consola
- * Máximo de lineas para este ejercicio, 2 lineas de código
- * Hint: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
+ * Pedir el nombre de una persona
+ * Imprimir el nombre de la persona al revés y en mayúsculas
+ * P.ej: juan
+ * -> NAUJ
  */
 
-const num = parseInt(window.prompt('Ingresa un numero entre 1 y 100: '))
-result = num % 2 === 0 ? console.log(`El numero ${num} es par`) : console.log(`El numero ${num} es impar`)
+const nameToReverse = window.prompt('Ingresa un nombre para reviertir y mayus: ').toUpperCase()
+const reversedname = nameToReverse.split("").reverse().join("")
+console.log(reversedname)
 
-////////////////////////////////////////////////
+// Pimer intento con for loop pero lo imprime en lineas separadas
+// for (i = 0; i <= nameToReverse.length; i++) {
+//     console.log(nameToReverse.substr(nameToReverse.length - i, 1))
+// }
+//////////////////////////////////////////////////////////////////////
 /**
- * 5:
- * Pedir al usuario el dia de la semana 
- * p.ej. lunes, martes, ...
- * Imprimir en consola el número del dia de la semana equivalente
- * es decir:
- * domingo -> 1, lunes -> 2, martes -> 3, etc...
+ * 5
+ * Pedir una palabra por promt
+ * Pedir un número entre 1 y 10
+ * Duplicar esa cantidad de veces esa palabra e imprimir en consola
+ * P.ej: 
+ * "Kodemia"
+ * 4
+ * -> "Kodemia Kodemia Kodemia Kodemia"
  */
 
-const weekday = window.prompt('Ingresa un dia de la semana: ')
-switch (weekday)  {
-    case 'domingo':
-        console.log('domingo -> 1')
-        break;
-    case 'lunes':
-        console.log('lunes -> 2')
-        break;
-    case 'martes':
-        console.log('martes -> 3')
-        break;
-    case 'miercoles':
-        console.log('miercoles -> 4')
-        break;
-    case 'jueves':
-        console.log('jueves -> 5')
-        break;
-    case 'viernes':
-        console.log('viernes -> 6')
-        break;
-    case 'sabado':
-        console.log('sabado -> 7')
-    default:
-        console.log('Intenta otra vez ingresando un dia de la semana valido... ')
-}
-
-///////////////////////////////////////////////////////////////
-/**
- * 6:
- * Pedir al usuario 2 numeros 
- * Imprimir en consola cual es el menor de los 2
- * Imprimir en consola cual es el mayor de los 2
- */
-
-const numA = parseInt(window.prompt('ingresa un primer numero: '))
-const numB = parseInt(window.prompt('Ingresa un segundo numero: '))
-
-if (numA > numB)  {
-    console.log(`El numero menor es ${numB}
-Y el numero mayor es ${numA}`)
-}
-else  {
-    console.log(`El numero menor es ${numA}
-Y el numero mayor es ${numB}`)
-}
+const word = window.prompt('Ingresa una palabra: ')
+const numToRepeat = window.prompt('Ingresa cuantas veces quieres repetirla (del 1 al 10): ')
+console.log(word.repeat(numToRepeat))
