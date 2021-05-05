@@ -4,56 +4,44 @@
 // p.ej.
 // --> El mes 5 (Mayo) tiene 31 días
 
-const monthNum = window.prompt('Ingresa un numero de mes: ')
+// const monthNum = window.prompt('Ingresa un numero de mes: ')
 
 switch (monthNum)   {
     case '1':
         console.log(`El mes ${monthNum} (Enero) tiene 31 dias`)
         break;
-
     case '2':
         console.log(`El mes ${monthNum} (Febrero) tiene 28 dias`)
         break;
-
     case '3':
         console.log(`El mes ${monthNum} (Marzo) tiene 31 dias`)
-        break;
-
+        bre
     case '4':
         console.log(`El mes ${monthNum} (Abril) tiene 30 dias`)
         break;
-
     case '5':
         console.log(`El mes ${monthNum} (Abril) tiene 30 dias`)
         break;
-
     case '6':
         console.log(`El mes ${monthNum} (Junio) tiene 30 dias`)
         break;
-
     case '7':
         console.log(`El mes ${monthNum} (Julio) tiene 31 dias`)
         break;
-
     case '8':
         console.log(`El mes ${monthNum} (Agosto) tiene 30 dias`)
         break;
-
     case '8':
         console.log(`El mes ${monthNum} (Septiembre) tiene 31 dias`)
         break;
-
     case '10':
         console.log(`El mes ${monthNum} (Octubre) tiene 31 dias`)
         break;
-
     case '11':
         console.log(`El mes ${monthNum} (Noviembre) tiene 30 dias`)
-
     case '12':
         console.log(`El mes ${monthNum} (Diciembre) tiene 31 dias`)
         break; 
-
     default:
         console.log('Ingresa un numero de mes valido...')
 }
@@ -107,7 +95,9 @@ switch (userWeather)    {
 const nameToCheck = window.prompt('Ingresa el nombre de una persona: ')
 const charToCheck = nameToCheck.slice(-1).toLowerCase()
 
-if (charToCheck == 'a' || charToCheck == 'e' || charToCheck == 'i' || charToCheck == 'o' || charToCheck == 'u') {
+const vowels = ['a','e','i','o','u']
+
+if (charToCheck.includes(vowels)) {
     console.log(`Tu nombre termina con la vocal ${charToCheck}`)
 }
 else    {
