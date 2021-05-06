@@ -7,11 +7,11 @@
  * 3 x 2 = 6
  */
 
-// const numToMulti = parseInt(window.prompt('Igresa un numero enre 1 y 10 para vre su table: '))
+const numToMulti = parseInt(window.prompt('Igresa un numero enre 1 y 10 para vre su table: '))
 
-// for (let i = 1; i < 10; i++)    {
-//     console.log(`${numToMulti} X ${i} = ${numToMulti * i}`)
-// }
+for (let i = 1; i < 10; i++)    {
+    console.log(`${numToMulti} X ${i} = ${numToMulti * i}`)
+}
 
 
 /**
@@ -21,35 +21,12 @@
  * 
  */
 
-const sentenceToCheck = window.prompt('Ingresa una oracion para revisar: ').toLowerCase()
-const vowels = 'aeiou'
-const specialChar ='! @,.'
-let vowelsInSentence = ""
-let consonantsInSentence = ""
-let totalChar = sentenceToCheck.length
-let i = 0
-
-while (i != totalChar - 1)  {
-
-    if (vowels.includes(sentenceToCheck[i]))    {
-        vowelsInSentence += sentenceToCheck[i]
-        i++
-        continue
-    }
-    else if (specialChar.includes(sentenceToCheck[i]))  {
-        i++
-        continue
-    }
-    else    {
-        consonantsInSentence += sentenceToCheck[i]
-        i++
-    }
-}
-
-console.log(vowelsInSentence)
-console.log(consonantsInSentence)
-
-
+// const sentenceToCheck = window.prompt('Ingresa una oracion para revisar: ').toLowerCase()
+// const vowels = 'aeiou'
+// const specialChar ='! @,.'
+// let vowelsInSentence = ""
+// let consonantsInSentence = ""
+// let totalChar = sentenceToCheck.length
 
 // for (let i = 0; i < sentencerToCheck.length; i++)   {
 
@@ -69,11 +46,6 @@ console.log(consonantsInSentence)
 
 // console.log(vowelsInSentence)
 // console.log(consonantsInSentence)
-
-
-
-
-
 
 
 /**
