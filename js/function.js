@@ -60,9 +60,14 @@ while (accion != '5')   {
 
         case '1':
             cantidad = parseInt(window.prompt('Ingresa una cantidad a retirar: $'))
-            retiro(cantidad)
-            console.log(`Retiro exitoso a tu cuenta\nTu saldo actual es de $${saldo}`)
-            retiros++
+            if (cantidad <= saldo)  { 
+                retiro(cantidad)
+                console.log(`Retiro exitoso a tu cuenta\nTu saldo actual es de $${saldo}`)
+                retiros++
+            }
+            else {
+                console.log("Lo sentidmos!. No cuentas con fondos para realizar ese retiro")
+            }
             break
 
         case '2':
@@ -80,7 +85,13 @@ while (accion != '5')   {
         case '4':
             cuenta = parseInt(window.prompt('Ingresa un numero de cuenta para tu traspaso: '))
             cantidad = parseInt(window.prompt('Ingresa una cantidad a traspasar: $'))
-            console.log(traspaso(cuenta, cantidad))
+            if (cantidad <= saldo)  {
+                console.log(traspaso(cuenta, cantidad))
+                console.log(`Tu saldo actual es $${saldo}`)
+            }
+            else    {
+                console.log('Lo sentidmos!. No cuentas con fondos para realizar ese traspaso')
+            }
             break
 
         default:
