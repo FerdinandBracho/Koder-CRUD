@@ -39,13 +39,13 @@ arrayReduce([1,2,3,4],[1,2]).
 
 
 const arrayOnee = [1,2,3,4,5,'se','jo'], arrayTwoo = [2,5,'se','jo']
-
-// (value) => arrayTwoo.indexOf(value) != -1
-
-let result = arrayOnee.filter(function(value) {
-    if (arrayTwoo.indexOf(value) != -1) {
-        return arrayTwoo.indexOf(value)
+  
+const TwoarrFunc = (arrayO, arrayT) => arrayO.filter((value) => {
+    if (arrayT.indexOf(value) != -1) {
+        return arrayT.indexOf(value)
     }
 })
-  
-console.log(result);
+
+// (e) => arrayY.indexOf(e) > -1
+
+console.log(TwoarrFunc(arrayOnee, arrayTwoo))
