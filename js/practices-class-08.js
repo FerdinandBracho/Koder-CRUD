@@ -11,7 +11,7 @@ console.log(totalVoters(arrOne ))
 
 // ! Declaracion de funciones 
 const totalPaella = arr => arr.reduce((total, value) => total+= value[1] === 'paella' ? 1 : 0 , 0)
-const postresPlatanoHelado = arr => arr.filter((value, index) => value[2] === 'platano' || value[2] === 'helado')
+const postresPlatanoHelado = arr => arr.filter((value) => value[2] === 'platano' || value[2] === 'helado')
 const costoSuperior = arr => arr.filter((value) => value[3] > 90)
 const costoMenor = arr => arr.filter((value) => value[3] <= 90)
 
@@ -27,9 +27,19 @@ let pedidos =
 
 // ! Ejecucion de funciones y presentacion de resultados en consola
 console.log(`Total de paellas pedidas: ${totalPaella(pedidos)}`)
-console.log('Pedidos con postres selecionados: ', postresPlatanoHelado(pedidos))
-console.log('Pedidos con costo superior a 90$: ', costoSuperior(pedidos))
-console.log('Pedidos con costo menor a 90$: ', costoMenor(pedidos))
+
+console.group('Pedidos con postres selecionados: ')
+console.table(postresPlatanoHelado(pedidos))
+console.groupEnd()
+
+console.group('Pedidos con costo superior a 90$: ',)
+console.table(costoSuperior(pedidos))
+console.groupEnd()
+
+console.group('Pedidos con costo menor a 90$: ')
+console.table(costoMenor(pedidos))
+console.groupEnd()
+
 //////////////////////////////////////////////////
 /**
  * Estudiar el tema de Objetos y métodos de Objetos
