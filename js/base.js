@@ -1,36 +1,50 @@
-//! Ejercicio en clase 1
-const stringItUp = arr => arr.map((value) => value.toString())
+// ! Ejercicio en clase 1 
+let pedidos = [
+    {
+        entrada: 'ensalado de pepinos',
+        principal: 'paella',
+        postre: 'platano',
+        precio: 100
+    }, {
+        entrada: 'ensalado de tomates',
+        principal: 'pescado',
+        postre: 'helado',
+        precio: 120
+    }, {
+        entrada: 'ensalado simple',
+        principal: 'paella',
+        postre: 'yogurt',
+        precio: 80
+    }, {
+        entrada: 'ensalado simple',
+        principal: 'enchilada',
+        postre: 'yogurt',
+        precio: 80
+    }, {
+        entrada: 'ensalado cesar',
+        principal: 'salmon',
+        postre: 'platano',
+        precio: 100
+    },
+]
 
-let arrayToTest = [2,5,100]
-console.log(stringItUp(arrayToTest))
+// ! Declaracion de funciones 
+const totalPaella = arr => arr.reduce((total, value) => total+= value.principal === 'paella' ? 1 : 0 , 0)
+const postresPlatanoHelado = arr => arr.filter((value) => value.postre === 'platano' || value[2] === 'helado')
+const costoSuperior = arr => arr.filter((value) => value.precio > 90)
+const costoMenor = arr => arr.filter((value) => value.precio <= 90)
 
-//! Ejercicio en clase 2
-const capitalizeNames = arr => arr.map((value) => value[0].toUpperCase() + value.substring(1).toLowerCase())
- 
-const arrTT = ["Jorge", "AntoniO", "JUan", "Victor"]
-console.log(capitalizeNames(arrTT))
+// ! Ejecucion de funciones y presentacion de resultados en consola
+console.log(`Total de paellas pedidas: ${totalPaella(pedidos)}`)
 
-//! Ejercicio en clase 3
-const joinNames = (arr, arrt) => arr.map((value, index) => value + " " + arrt[index])
+console.group('Pedidos con postres selecionados: ')
+console.table(postresPlatanoHelado(pedidos))
+console.groupEnd()
 
-let arrOne = ['jorge', 'luis']
-let arrTwo = ['camarillo','cristobal']
-console.log(joinNames(arrOne, arrTwo))
+console.group('Pedidos con costo superior a $90: ',)
+console.table(costoSuperior(pedidos))
+console.groupEnd()
 
-//! Ejercicio en clase 4 
-const stringCon = arr => arr.reduce((result, value) => result += value, '')
-
-let arrThree = [1,2,3]
-console.log(`The result of the reduce operation is: ${stringCon(arrThree)}`)
-
-//! Ejercicio en clase 5
-const totalShoppingCart = arr => arr.reduce((result, value, index) => result += (value[1]), 0)
-
-let arrFive = 
-    [ 
-        ["Reloj", 500] , 
-        ["Reloj", 300] , 
-        ["Reloj", 1200],
-        ["Reloj", 5000]
-    ] 
-console.log(`El total es de: $${totalShoppingCart(arrFive)},00`)
+console.group('Pedidos con costo menor o igual $90: ')
+console.table(costoMenor(pedidos))
+console.groupEnd()
