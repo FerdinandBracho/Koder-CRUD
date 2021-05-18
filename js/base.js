@@ -1,52 +1,29 @@
-// ! Ejercicio en clase 1 
-let pedidos = [
+// !ejercicio en clase 1 
+
+let koders  =  [
     {
-        entrada: 'ensalado de pepinos',
-        principal: 'paella',
-        postre: 'platano',
-        precio: 100
-    }, {
-        entrada: 'ensalado de tomates',
-        principal: 'pescado',
-        postre: 'helado',
-        precio: 120
-    }, {
-        entrada: 'ensalado simple',
-        principal: 'paella',
-        postre: 'yogurt',
-        precio: 80
-    }, {
-        entrada: 'ensalado simple',
-        principal: 'enchilada',
-        postre: 'yogurt',
-        precio: 80
-    }, {
-        entrada: 'ensalado cesar',
-        principal: 'salmon',
-        postre: 'platano',
-        precio: 100
-    },
+        name: 'jorge',
+        lastName: 'camarillo',
+        age: 30
+    },{
+        name: 'ferdi',
+        lastName: 'cam',
+        age: 33
+    },{
+        name: 'finand',
+        lastName: 'llo',
+        age: 13
+    },{
+        name: 'ferdinand',
+        lastName: 'bracho',
+        age: 333
+    }
 ]
 
-    // ! Declaracion de funciones 
-const totalPaella = arr => arr.reduce((total, value) => total+= value.principal === 'paella' ? 1 : 0 , 0)
-const postresPlatanoHelado = arr => arr.filter((value) => value.postre === 'platano' || value.postre === 'helado')
-const costoSuperior = arr => arr.filter((value) => value.precio > 90)
-const costoMenor = arr => arr.filter((value) => value.precio <= 90)
+koders.forEach(element => {
+    element.fullName = function(){
+        return `Mi nombre es ${this.name} ${this.lastName}`
+    }
+})
 
-    // ! Ejecucion de funciones y presentacion de resultados en consola
-console.log(`Total de paellas pedidas: ${totalPaella(pedidos)}`)
-
-console.group('Pedidos con postres selecionados: ')
-console.table(postresPlatanoHelado(pedidos))
-console.groupEnd()
-
-console.group('Pedidos con costo superior a $90: ',)
-console.table(costoSuperior(pedidos))
-console.groupEnd()
-
-console.group('Pedidos con costo menor o igual $90: ')
-console.table(costoMenor(pedidos))
-console.groupEnd()
-
-////////////////////////////////////////////////////
+koders.forEach(koder => console.log(koder.fullName()))
