@@ -28,13 +28,13 @@ let pedidos = [
     },
 ]
 
-// ! Declaracion de funciones 
+    // ! Declaracion de funciones 
 const totalPaella = arr => arr.reduce((total, value) => total+= value.principal === 'paella' ? 1 : 0 , 0)
-const postresPlatanoHelado = arr => arr.filter((value) => value.postre === 'platano' || value[2] === 'helado')
+const postresPlatanoHelado = arr => arr.filter((value) => value.postre === 'platano' || value.postre === 'helado')
 const costoSuperior = arr => arr.filter((value) => value.precio > 90)
 const costoMenor = arr => arr.filter((value) => value.precio <= 90)
 
-// ! Ejecucion de funciones y presentacion de resultados en consola
+    // ! Ejecucion de funciones y presentacion de resultados en consola
 console.log(`Total de paellas pedidas: ${totalPaella(pedidos)}`)
 
 console.group('Pedidos con postres selecionados: ')
@@ -48,3 +48,5 @@ console.groupEnd()
 console.group('Pedidos con costo menor o igual $90: ')
 console.table(costoMenor(pedidos))
 console.groupEnd()
+
+////////////////////////////////////////////////////
