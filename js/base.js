@@ -1,29 +1,77 @@
-// !ejercicio en clase 1 
+// ! Tabla arrays 
+let tablaKoder = document.querySelector(".tbody-array")
+let koders = ['antonio', 'victor', 'rose', 'Ferdinand','Jorge']
+let listKoder = ''
 
-let koders  =  [
+koders.forEach((koderName, index) =>{
+    listKoder += `
+        <tr>
+            <td> ${index} </td>
+            <td> ${koderName} </td>
+        </tr>
+    `
+})
+
+console.log(listKoder)
+tablaKoder.innerHTML = listKoder
+
+// !Tabla Objetos 
+
+let tablaKoderO = document.querySelector(".tbody-obj")
+let kodersObject  = [
     {
-        name: 'jorge',
-        lastName: 'camarillo',
-        age: 30
-    },{
-        name: 'ferdi',
-        lastName: 'cam',
-        age: 33
-    },{
-        name: 'finand',
-        lastName: 'llo',
-        age: 13
-    },{
-        name: 'ferdinand',
+        name: 'Ferdinand',
         lastName: 'bracho',
-        age: 333
+        age: 30,
+        github:'@Ferdinand-Bracho'
+    },{
+        name:'Ferdinand',
+        lastName:'bracho',
+        age: 30,
+        github:'@Ferdinand-Bracho'
+    },{
+        name:'Ferdinand',
+        lastName:'bracho',
+        age: 30,
+        github:'@Ferdinand-Bracho'
+    },{
+        name: 'Ferdinand',
+        lastName: 'bracho',
+        age: 30,
+        github:'@Ferdinand-Bracho'
+    },{
+        name:'Ferdinand',
+        lastName:'bracho',
+        age: 30,
+        github:'@Ferdinand-Bracho'
     }
 ]
 
-koders.forEach(element => {
-    element.fullName = function(){
-        return `Mi nombre es ${this.name} ${this.lastName}`
-    }
+let listKoderO = ''
+kodersObject.forEach((item, index) => {
+    let {name, lastName, age, github} = item
+    listKoderO += `
+        <tr>
+            <td> ${index} </td>
+            <td> ${name}</td>
+            <td> ${lastName}</td>
+            <td> ${age}</td>
+            <td> ${github}</td>
+        </tr>
+    `
 })
 
-koders.forEach(koder => console.log(koder.fullName()))
+tablaKoderO.innerHTML = listKoderO
+
+
+// koders.forEach((koderName, index) =>{
+//     listKoder += `
+//         <tr>
+//             <td> ${index} </td>
+//             <td> ${koderName} </td>
+//         </tr>
+//     `
+// })
+
+// console.log(listKoder)
+// tablaKoder.innerHTML = listKoder
