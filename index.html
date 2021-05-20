@@ -7,54 +7,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-  <title>Mod01-Js</title>
+  <title>Lista de Deseos</title>
 </head>
 
 <body>
 
-  <div class="container">
+  <main class="container-fluid">
+    <div class="row p-3">
+      <div class="container">
+        <div class="row border rounded p-3">
 
-    <!-- !Tabla Arrays -->
-    <div class="row mt-5">
-      <div class="col-6 border border-secondary rounded ">
-        <h2>Tabla Arrays</h2>
-        <table class="table table-dark table-striped">
-          <thead>
-            <tr class="">
-              <th scope="col">#</th>
-              <th scope="col">Nombre</th>
-            </tr>
-          </thead class="">
-          <tbody class="tbody-array">
-          </tbody>
-        </table>
-      </div>
-    </div>
+          <!-- ! Titulo y Botnoes -->
+          <div class="d-flex justify-content-between"">
+            <div>
+              <h3>Lista de Deseos</h3>
+            </div>
+            <div>
+              <h5>Filtrar lista </h5>
+            <button type=" button" class="btn btn-outline-secondary mb-1 btn-id">Id</button>
+            <button type="button" class="btn btn-outline-secondary mb-1 btn-name">Nombre</button>
+            <button type="button" class="btn btn-outline-secondary mb-1 btn-price">Precio</button>
+          </div>
+        </div>
 
-    <!-- !Tabla Objetos  -->
-    <div class="row mt-5">
-      <div class="col-12 border border-secondary rounded ">
-        <h2>Tabla Objetos</h2>
-        <table class="table table-dark table-striped">
-          <thead class="">
-            <tr class="">
-              <th scope="col">#</th>
-              <th scope="col">Nombre</th>
-              <th scope="col">Apellido</th>
-              <th scope="col">Edad</th>
-              <th scope="col">Usuario Github</th>
+        <!-- ! Table -->
+        <table class="table table-hover">
+          <thead class="table-secondary">
+            <tr>
+              <th>ID</th>
+              <th>Nombre Producto</th>
+              <th>Descripcion</th>
+              <th>Precio</th>
+              <th>Imagen</th>
             </tr>
           </thead>
-          <tbody class="tbody-obj">
+          <tbody class="tbody-items">
           </tbody>
         </table>
+
       </div>
     </div>
+    </div>
+  </main>
 
-  </div>
-
-
-  <script src="js/base.js"></script>
+  <script src="js/practices-class-11.js"></script>
   </script>
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
