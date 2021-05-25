@@ -22,4 +22,4 @@ const printKoder = (objkoder) => {
     document.querySelector('.btn-primary').setAttribute('target','_blank')
 }
 
-printKoder(koderObject)
+

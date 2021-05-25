@@ -2,7 +2,6 @@
 // Abrir la conexion
 // Enviar la petición
 
-
 // ! JS para traer datos y pintarlos en el html en la tabla de Post 
 const printPost =  arr =>   {
     let acumulador = ''
@@ -16,7 +15,7 @@ const printPost =  arr =>   {
             <td>${id}</td>
             <td>${title}</td>
             <td>${body}</td>
-            <td><a href/post.html?idpost=${acumulador.id}"><button class="btn btn-dark">Ver Post</button></a></td> 
+            <td><a href="post.html?idPost=${id}"><button class="btn btn-dark btn-post">Ver Post</button></a></td> 
         </tr>
         ` 
     })
@@ -70,7 +69,6 @@ const commentsRequest = new XMLHttpRequest
 
 commentsRequest.addEventListener('readystatechange', () => {
     if(commentsRequest.readyState !== 4) {
-        console.log(commentsRequest.readyState)
         return
     }
     else {
@@ -87,3 +85,9 @@ commentsRequest.addEventListener('readystatechange', () => {
 
 commentsRequest.open('GET','https://jsonplaceholder.typicode.com/comments')
 commentsRequest.send()
+
+
+
+
+
+
