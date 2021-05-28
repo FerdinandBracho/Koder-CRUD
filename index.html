@@ -6,36 +6,70 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <title>JQuery</title>
+  <title>Koders - Alta - Edicion - Baja</title>
 </head>
 
 <body>
-  <h1>textttt</h1>
 
-  <ul>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ul>
+  <main class="container">
+    <h1 class="text-center my-4">Koders - Alta - Edicion - Baja</h1>
+    <!-- !Form Alta Koders -->
+    <div class="row my-5">
+      <div class="col">
+        <form action="" class="alta-koders">
+          <div class="d-flex justify-content-between input-group-text">
+            <h3>Alta Koder</h3>
+            <div>
+              <input id="inputName" type="text" placeholder="Nombre" class="form-control">
+            </div>
+            <div>
+              <input id="inputLastName" type="text" placeholder="Apellido" class="form-control">
+            </div>
+            <div>
+              <input id="inputAge" type="text" placeholder="Edad" class="form-control">
+            </div>
+            <div>
+              <input id="inputPosition" type="text" placeholder="Rol" class="form-control">
+            </div>
+            <div>
+              <button class="btn btn-secondary" id="btn-form-alta" type="button" data-bs-toggle="tooltip"
+                data-bs-placement="bottom" title="Al Dar Click Das de alta un nuevo Koder">Dar de Alta</button>
+            </div>
 
-  <ol>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ol>
+          </div>
+        </form>
+      </div>
+    </div>
 
-  <div class="content">
 
-  </div>
+    <!-- ! Tabla para pintar Kopders -->
+    <div class="row ">
+      <div class="col">
+        <table class="table table-light table-striped t-koder">
+          <thead class="table-dark">
+            <tr>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Edad</th>
+              <th>Rol</th>
+              <th>Acceso</th>
+              <th>Eliminar</th>
+            </tr>
+          </thead>
+          <tbody class="tb-koder">
+            <!-- !Lista de Koders Aca  -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
     crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="js/base.js"></script>
+  <script src="js/tabla-koder.js"></script>
 </body>
 
 </html>
