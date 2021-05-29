@@ -40,6 +40,7 @@ $(document).ready(function() {
             position: $('#inputPositionEdit').val()
         }
 
+            // !Ajax Put para actualizar datos
             $.ajax({
                 url: `https://sessiones-js-default-rtdb.firebaseio.com/koders/${hashKoder}/.json`,
                 data: JSON.stringify(dataToPut),

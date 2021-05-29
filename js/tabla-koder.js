@@ -78,19 +78,25 @@ $(document).ready(() => {
     // ! Eliminar Koder seleccionado
 
     $('.t-koder').on('click', '.btn-delete-koder', function() {
-        let koderId = $('.btn-delete-koder').data('id')
+        let koderId = $(this).data('id')
+        console.log(koderId)
 
-        // !Fetch delete koder seleccionado
-        fetch(`https://sessiones-js-default-rtdb.firebaseio.com/koders/${koderId}/.json`, {
-            method: 'DELETE'
-        }).then(res => {
-            res.json()
-            console.log(`Koder ${koderId} eliminado con exito`)
-            return printTableFinal()
-        }).catch((error) => {
-            console.error('Error:', error);
-        });
-
+        // !$Ajax delete koder seleccionado
+        $.ajax({
+            url: `https://sessiones-js-default-rtdb.firebaseio.com/koders/${koderId}/.json`,
+            type: 'DELETE',
+            datatype: 'json',
+            success: function(){
+                printTableFinal()
+                console.log('Operacion para eliminar koder exitosa')
+            },
+            error: function(xhr){
+                console.log(xhr.statusText)
+            },
+            complete: function(){
+                console.log('Peticion Realizada')
+            }
+        })
     })
      
     // ? //////////////////////////////////////////////////////////////////////////////////////
